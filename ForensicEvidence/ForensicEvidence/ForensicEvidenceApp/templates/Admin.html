@@ -1,0 +1,128 @@
+{% load static %}
+<html>
+<head>
+<title>Forensic Evidence Management</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="{% static 'style.css' %}" rel="stylesheet" type="text/css" media="screen" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script language="javascript">
+	function validate(formObj)
+	{
+	if(formObj.t1.value.length==0)
+	{
+	alert("Please Enter User ID");
+	formObj.t1.focus();
+	return false;
+	}
+	if(formObj.t2.value.length==0)
+	{
+	alert("Please Enter Password");
+	formObj.t2.focus();
+	return false;
+	}
+	formObj.actionUpdateData.value="update";
+	return true;
+	}
+	</script>
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+
+
+<style>
+body {
+  background: #c9ccd1;
+}
+.form-style input {
+  border: 0;
+  height: 50px;
+  border-radius: 0;
+  border-bottom: 1px solid #ebebeb;
+}
+.form-style input:focus {
+  border-bottom: 1px solid #007bff;
+  box-shadow: none;
+  outline: 0;
+  background-color: #ebebeb;
+}
+.sideline {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ccc;
+}
+button {
+  height: 50px;
+}
+.sideline:before,
+.sideline:after {
+  content: "";
+  border-top: 1px solid #ebebeb;
+  margin: 0 20px 0 0;
+  flex: 1 0 20px;
+}
+ 
+.sideline:after {
+  margin: 0 0 0 20px;
+}
+ 
+</style>
+</head>
+<body>
+<div id="wrapper">
+	
+	<div id="menu">
+		<ul>
+			<li><a href="{% url 'index' %}">Home</a></li>
+			<li><a href="{% url 'Admin' %}">Login</a></li>
+			<li><a href="{% url 'About' %}">About</a></li>
+   </ul>					<br class="clearfix" />
+				</div>
+			
+	<div id="splash">
+		<img class="pic" src="{% static 'images/investor.JPG' %}" width="870" height="230" alt="" />
+	</div>	
+	<div class="container">
+			<center>
+				<div class="container">
+					<div class="row m-5 no-gutters shadow-lg">
+					  <div class="col-md-6 d-none d-md-block">
+						<img src="{% static 'images/left.JPG' %}" />
+					  </div>
+					  <div class="col-md-6 bg-white p-5">
+						<h4 class="pb-3">Admin Login</h4>
+						<div class="form-style">
+							<form name="f1" method="post" action="{% url 'AdminLogin' %}" onsubmit="return validate(this);">
+								{% csrf_token %}<br/>
+								<center><font face="verdana" color="red">{{ data }}</font></center>
+							<div class="form-group pb-3">
+							  <input type="text" placeholder="User name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="t1">
+							</div>
+							<div class="form-group pb-3">
+							  <input type="password" placeholder="Password" class="form-control" id="exampleInputPassword1" name="t2">
+							</div>
+							
+							<div class="pb-2">
+							  <button type="submit" class="btn btn-dark w-100 font-weight-bold mt-2">Submit</button>
+							</div>
+						  </form>
+						  
+						</div>
+				   
+					  </div>
+					</div>
+				  </div>
+
+   
+  </form>
+			
+	</div>	
+					
+				</div>
+			
+				
+	</body>
+</html>

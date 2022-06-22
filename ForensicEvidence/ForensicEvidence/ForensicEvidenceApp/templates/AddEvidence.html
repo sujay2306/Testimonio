@@ -1,0 +1,127 @@
+{% load static %}
+<html>
+<head>
+<title>Forensic Evidence Management</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="{% static 'style.css' %}" rel="stylesheet" type="text/css" media="screen" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+<script language="javascript">
+	function validate(formObj)
+	{
+	if(formObj.t1.value.length==0)
+	{
+	alert("Please Enter Record ID");
+	formObj.t1.focus();
+	return false;
+	}
+	if(formObj.t2.value.length==0)
+	{
+	alert("Please Enter Crime Type");
+	formObj.t2.focus();
+	return false;
+	}
+	if(formObj.t3.value.length==0)
+	{
+	alert("Please Enter Crime Description");
+	formObj.t3.focus();
+	return false;
+	}
+	if(formObj.t4.value.length==0)
+	{
+	alert("Please Enter Evidence Details");
+	formObj.t4.focus();
+	return false;
+	}
+	if(formObj.t5.value.length==0)
+	{
+	alert("Please Enter Crime Area");
+	formObj.t5.focus();
+	return false;
+	}
+	if(formObj.t6.value.length==0)
+	{
+	alert("Please Enter Eye Wintnesses details");
+	formObj.t6.focus();
+	return false;
+	}
+	return true;
+	}
+	</script>
+</head>
+<body>
+<div id="wrapper">
+	
+	<div id="menu">
+		<ul>
+      <li><a href="{% url 'AddEvidence' %}">Add Evidences to Blockchain</a></li>
+      <li><a href="{% url 'ViewEvidence' %}">Fetch Evidences from Blockchain</a></li>
+       <li><a href="{% url 'index' %}">Logout</a></li>
+   </ul>				<br class="clearfix" />
+				</div>
+			
+	<div id="splash">
+		<img class="pic" src="{% static 'images/investor.JPG' %}" width="870" height="230" alt="" />
+	</div>	
+			<center>
+				<div class="container">
+<form name="f1" method="post" action="{% url 'AddEvidenceAction' %}">
+{% csrf_token %}<br/>
+   <h2><b>Evidence Collection Screen</b></h2>
+
+   <center><font face="verdana" color="red">{{ data }}</font></center>
+   <div class="row">
+   <div class="form-group col-md-6">
+	<label for="usr">Record ID</label>
+	<input type="text" class="form-control" id="usr" name="t1" required>
+  </div>
+</div>
+  <div class="row">
+  <div class="form-group col-md-6">
+	<label for="usr">Crime Type</label>
+	<input type="text" class="form-control" id="usr"  name="t2" required>
+  </div>
+</div>
+  <div class="row">
+  <div class="form-group col-md-6">
+	<label for="usr">Crime Description</label>
+	<input type="text" class="form-control" id="usr"  name="t3" required>
+  </div>
+</div>
+<div class="row">
+	<div class="form-group col-md-6">
+	  <label for="usr">Collected Evidence Details</label>
+	  <input type="text" class="form-control" id="usr"  name="t4" required>
+	</div>
+	</div>
+  <div class="row">
+  <div class="form-group col-md-6">
+	<label for="usr">Crime Area</label>
+	<input type="text" class="form-control" id="usr"  name="t5" required>
+  </div>
+</div>
+  <div class="row">
+  <div class="form-group col-md-6">
+	<label for="usr">Eye Witness</label>
+	<input type="text" class="form-control" id="usr"  name="t6" required>
+  </div>
+</div>
+					
+<div class="pb-2 col-md-6">
+	<button type="submit" style="background-color: #E0FFFF; color: black;" class="btn btn-dark w-100 font-weight-bold mt-2">Add</button>
+  </div>					
+		
+			
+			
+			
+</form>
+</div>
+		
+				</div>	
+					
+				</div>
+				
+	</body>
+</html>

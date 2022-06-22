@@ -1,0 +1,36 @@
+{% load static %}
+<html>
+<head>
+<title>Forensic Evidence Management</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="{% static 'style.css' %}" rel="stylesheet" type="text/css" media="screen" />
+</head>
+<body>
+<div id="wrapper">
+	
+	<div id="menu">
+		<ul>
+      <li><a href="{% url 'AddEvidence' %}">Add Evidences to Blockchain</a></li>
+      <li><a href="{% url 'ViewEvidence' %}">Fetch Evidences from Blockchain</a></li>
+       <li><a href="{% url 'index' %}">Logout</a></li>
+   </ul>
+		<br class="clearfix" />
+	</div>
+	<div id="splash">
+		<img class="pic" src="{% static 'images/investor.JPG' %}" width="870" height="230" alt="" />
+	</div>
+	<br/>
+	<table align="center" border="1">
+	<tr><th><font size="3" color="black">Record ID</th>
+			<th><font size="3" color="black">Crime Type</th>
+			<th><font size="3" color="black">Crime Description</th>
+			<th><font size="3" color="black">Evidence Details</th>
+			<th><font size="3" color="black">Crime Area</th>
+			<th><font size="3" color="black">Eye Witnesses</th>
+			<th><font size="3" color="black">Crime Date</th>
+	{{ data|safe }}
+	</table>
+	<br/>
+	<br/>
+</body>
+</html>
