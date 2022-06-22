@@ -1,0 +1,53 @@
+{% load static %}
+<html>
+<head>
+<title>Forensic Evidence Management</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="{% static 'style.css' %}" rel="stylesheet" type="text/css" media="screen" />
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+<div id="wrapper">
+	
+	<div id="menu">
+		<ul>
+      <li><a href="{% url 'index' %}">Home</a></li>
+      <li><a href="{% url 'Admin' %}">Login</a></li>
+	  <li><a href="{% url 'About' %}">About</a></li>
+   </ul>
+		<br class="clearfix" />
+	</div>
+	<div id="splash">
+		<img class="pic" src="{% static 'images/about.png' %}" width="870" height="230" alt="" />
+	</div>
+	<br/>
+    
+
+		
+	
+    <div class="row">
+        <div class="col-md-6">
+            <h4>Block Chain</h4>
+                        
+                        <p class="text-muted" style="text-align: justify;">Blockchains are
+                            digitally distributed ledgers of transactions signed
+                            cryptographically in chronological order that are sorted
+                            into blocks and is completely open to anyone in the
+                            blockchain network. Hyperledger Fabric is a consortium
+                            blockchain framework created by the Linux foundation
+                            and is mainly used for enterprise use. Based on the
+                            concept of Hyperledger Fabric, present study aimed to
+                            create a framework and further propose an algorithm to
+                            implement Blockchain Technology to digitalize forensic
+                            evidence management system and maintain Chain of
+                            Custody.</p>
+        </div>
+        <div class="col-md-6 how-img">
+            <img src="{% static 'images/right.JPG' %}" style="height:200px; margin-right:-15px;" alt=""/>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

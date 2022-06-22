@@ -1,0 +1,17 @@
+pragma solidity >= 0.8.9 <= 0.8.9;
+
+contract BlockchainMLContract {
+    string public healthrecords;
+
+    function setHealthRecord(string memory hr) public {
+        healthrecords = hr;	
+    }
+
+    function getHealthRecord() public view returns (string memory) {
+        return healthrecords;
+    }
+
+    constructor() public {
+        healthrecords = "empty";
+    }
+}
